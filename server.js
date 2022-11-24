@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const router = require("./routes/user.js");
 const db = require("./config/db ");
-const model = require("./models/User");
+const model = require("./models/user");
 
 // parsing middleware
 app.use(express.json());
