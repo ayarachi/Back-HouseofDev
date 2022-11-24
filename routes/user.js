@@ -1,7 +1,9 @@
 const express = require("express");
-const router = express.Router();
-const User = require("../models/user");
+
 const { generateToken } = require("../config/token");
+const { User } = require("../models");
+
+const router = express.Router();
 
 router.post("/register", (req, res) => {
   User.create(req.body).then((user) => res.status(201).send(user));
@@ -30,6 +32,7 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
 router.post("/logout", (req, res) => {
   res.clearCookie("token");
   res.sendStatus(204);

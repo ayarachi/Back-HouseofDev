@@ -1,8 +1,9 @@
 const express = require("express");
-const app = express();
+
 const router = require("./routes/user.js");
 const db = require("./config/db ");
-const model = require("./models/user");
+
+const app = express();
 
 // parsing middleware
 app.use(express.json());
@@ -16,8 +17,6 @@ app.use((err, req, res, next) => {
   res.status(500).send(err.message);
 });
 
-db.sync({ force: false })
-  .then(() =>
-    app.listen(3001, () => console.log("Servidor escuchando en el puerto 3001"))
-  )
-  .catch(console.error);
+app.listen(3001, () => {
+  console.log("Servidor escuchando en el puerto 3001");
+});

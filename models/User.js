@@ -57,7 +57,10 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: false,
       },
     },
-    { sequelize, modelName: "user" }
+    {
+      sequelize,
+      modelName: "User",
+    }
   );
 
   User.beforeCreate((user) => {
