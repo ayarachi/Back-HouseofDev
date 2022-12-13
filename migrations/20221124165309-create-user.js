@@ -25,7 +25,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
         unique: true,
-        validate: { isEmail: true },
       },
       salt: {
         type: Sequelize.STRING,

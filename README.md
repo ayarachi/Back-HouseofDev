@@ -45,3 +45,13 @@ Deshacer todas las migraciónes:
 ```
 npx sequelize-cli db:migrate:undo:all
 ```
+usuario admin
+"name": "ayarachi",
+  "lastName":"Eliana",
+  "phone": "56478574",
+  "email":"ayarachi@gmail.com",
+  "pass": "ayarachi",
+  "isAdmin": true
+
+  rafce=> crea automaticamnte un componente.
+  

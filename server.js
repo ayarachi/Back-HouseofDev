@@ -1,15 +1,15 @@
 const express = require("express");
-
-const usersRouter = require("./routes/users");
-const propertiesRouter = require("./routes/properties");
-
+const morgan = require("morgan")
 const app = express();
+const routes= require("./routes")
+const cookieParser= require("cookie-parser")
 
 // parsing middleware
+app.use(cookieParser());
+app.use(morgan("tiny"))
 app.use(express.json());
-app.use("/api", usersRouter);
-app.use("/api", propertiesRouter);
-// app.use(cookieParser());
+app.use("/api",routes);
+
 
 // error middleware -> https://expressjs.com/es/guide/error-handling.html
 app.use((err, req, res, next) => {

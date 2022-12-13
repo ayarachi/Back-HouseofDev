@@ -1,16 +1,17 @@
 const express = require("express");
+const { validateAdmin, validateAuth } = require("../middleware/auth");
 
 const { Property } = require("../models");
 
 const router = express.Router();
 
 // Ruta para añadir propiedad
-router.post("/properties", (req, res) => {
+router.post("/", validateAdmin, (req, res) => {
   Property.create(req.body).then((property) => res.status(201).send(property));
 });
 
 // Para editar propiedad
-router.put("/properties/:id", (req, res) => {
+router.put("/:id", validateAdmin, (req, res) => {
   Property.update(req.body, {
     where: { id: req.params.id },
     returning: true,
@@ -20,19 +21,20 @@ router.put("/properties/:id", (req, res) => {
 });
 
 // Ruta para borrar propiedad
-router.delete("/properties/:id", (req, res) => {
+router.delete("/:id", validateAdmin, (req, res) => {
   Property.destroy({
     where: { id: req.params.id },
   }).then(() => res.status(204).send());
 });
 
 // Ruta para listar  todas las propiedades
-router.get("/properties", (req, res) => {
+router.get("/", (req, res) => {
   Property.findAll().then((property) => res.status(200).send(property));
 });
 
 // Ruta para obtener una propiedad en particular
-router.get("/properties/:id", (req, res) => {
+router.get("/:id", (req, res) => {
+  console.log(req.params);
   Property.findByPk(req.params.id).then((property) =>
     res.status(200).send(property)
   );
