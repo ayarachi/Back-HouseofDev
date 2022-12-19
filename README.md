@@ -45,13 +45,23 @@ Deshacer todas las migraciónes:
 ```
 npx sequelize-cli db:migrate:undo:all
 ```
+
 usuario admin
 "name": "ayarachi",
-  "lastName":"Eliana",
-  "phone": "56478574",
-  "email":"ayarachi@gmail.com",
-  "pass": "ayarachi",
-  "isAdmin": true
+"lastName":"Eliana",
+"phone": "56478574",
+"email":"ayarachi@gmail.com",
+"pass": "ayarachi",
+"isAdmin": true
 
-  rafce=> crea automaticamnte un componente.
-  
+rafce=> crea automaticamnte un componente.
+
+# Using `pgcli`
+
+- `\l`: Listar bases de datos
+- `\c`: Conectar a un base de datos
+- `\dt`: Listar tablas en el base de datos
+
+# Poblar la base de datos
+
+`npm run seed`

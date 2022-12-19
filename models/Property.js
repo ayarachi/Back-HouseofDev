@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Property.init(
     {
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       image: {
         allowNull: false,
         type: DataTypes.STRING,
@@ -23,20 +27,20 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      type: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
       numRooms: {
         type: DataTypes.INTEGER,
-      },
-      description: {
-        type: DataTypes.TEXT,
-        allowNull: false,
       },
       neighborhood: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      price: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      type: {
+        allowNull: false,
+        type: DataTypes.STRING,
       },
     },
     {
