@@ -43,13 +43,13 @@ router.get("/:id", (req, res) => {
 //Ruta de la barra de busqueda
 
 router.get("/busqueda/:busqueda", (req, res) => {
-  console.log(req.params);
+  console.log(req.params.busqueda);
   Property.findAll({
     where: {
       [Op.or]: [
         { type: { [Op.iLike]: `%${req.params.busqueda}%` } },
-        { neighborhood: { [Op.iLike]: `% ${req.params.busqueda}%` } },
-        { name: { [Op.iLike]: `% ${req.params.busqueda}%` } },
+        { neighborhood: { [Op.iLike]: `%${req.params.busqueda}%` } },
+        { name: { [Op.iLike]: `%${req.params.busqueda}%` } },
       ],
     },
   }).then((property) => res.status(200).send(property));

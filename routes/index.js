@@ -6,5 +6,7 @@ const properties = require("./properties")
 
 router.use("/users", users)
 router.use("/properties", properties)
+router.use("/favorites", properties)
+
 
 module.exports= router

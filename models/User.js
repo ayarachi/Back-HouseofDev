@@ -1,7 +1,9 @@
 "use strict";
 
 const bcrypt = require("bcrypt");
+const { user } = require("pg/lib/defaults");
 const { Model } = require("sequelize");
+const favorite = require("./Favorite");
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -12,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
+      User.hasMany(models.Favorite, {as: 'favorite'})
     }
 
     hash(password, salt) {
