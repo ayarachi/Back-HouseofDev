@@ -65,3 +65,6 @@ rafce=> crea automaticamnte un componente.
 # Poblar la base de datos
 
 `npm run seed`
+para eliminar la base de datos trunquet o delete
+
+

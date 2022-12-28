@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Favorite.belongsTo(models.User, {
-        foreignKey: "id",
-        target_key: "userId",
+        foreignKey: "userId",
+        targetKey: "id",
       });
       Favorite.belongsTo(models.Property, {
-        foreignKey: "id",
-        target_key: "propertyId",
+        foreignKey: "propertyId",
+        targetKey: "id",
       });
     }
   }
@@ -39,6 +39,3 @@ module.exports = (sequelize, DataTypes) => {
   return Favorite;
 };
 
-//relaciones , cuales es el campo que se va a relacionar
-//probar las rutas
-//hacer una vista de favoritos
