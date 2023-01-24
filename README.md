@@ -65,3 +65,9 @@ rafce=> crea automaticamnte un componente.
 # Poblar la base de datos
 
 `npm run seed`
+Github 
+git status
+git add .
+git status
+git commit -m "detalle"
+git push

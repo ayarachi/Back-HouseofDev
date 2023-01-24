@@ -34,7 +34,7 @@ Correr las migraciónes:
 npx sequelize-cli db:migrate
 ```
 
-Deshacer la ultima migración:
+Deshacer la ultima migración: esto tengo que hacer cada vez que hay un cambio en el modelo , despues correr de nuevo la migracion
 
 ```
 npx sequelize-cli db:migrate:undo
@@ -66,5 +66,7 @@ rafce=> crea automaticamnte un componente.
 
 `npm run seed`
 para eliminar la base de datos trunquet o delete
+
+
 
 

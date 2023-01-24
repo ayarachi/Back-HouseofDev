@@ -1,7 +1,7 @@
 const express = require("express");
 const { validateAdmin, validateAuth } = require("../middleware/auth");
 
-const { Property } = require("../models");
+const { Favorite, Property } = require("../models");
 const { Op } = require("sequelize");
 const router = express.Router();
 
@@ -22,10 +22,15 @@ router.put("/:id", validateAdmin, (req, res) => {
 });
 
 // Ruta para borrar propiedad
-router.delete("/:id", validateAdmin, (req, res) => {
-  Property.destroy({
-    where: { id: req.params.id },
-  }).then(() => res.status(204).send());
+router.delete("/:id", validateAdmin, async (req, res) => {
+  const propertyId = req.params.id;
+  await Favorite.destroy({
+    where: { propertyId: propertyId },
+  });
+  await Property.destroy({
+    where: { id: propertyId },
+  });
+  res.status(204).send();
 });
 
 // Ruta para listar  todas las propiedades

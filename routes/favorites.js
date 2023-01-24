@@ -17,11 +17,13 @@ router.delete("/:id", (req, res) => {
     where: { id: req.params.id },
   }).then(() => res.status(204).send());
 });
+
 // ruta para ver los favoritos de un usuario en especifico
 router.get("/:id", (req, res) => {
-  Favorite.findAll({where:{userId:req.params.id}, include: [{ model: Property }] }).then((favorite) =>
-    res.status(200).send(favorite)
-  );
+  Favorite.findAll({
+    where: { userId: req.params.id },
+    include: [{ model: Property }],
+  }).then((favorite) => res.status(200).send(favorite));
 });
 
 module.exports = router;
