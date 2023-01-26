@@ -1,7 +1,14 @@
 # Proyecto integrador HOUSE OF DEV
 
 SCHEMA DESING https://dbdiagram.io/d/6373b8adc9abfc611172db50
-Base de datos propiedades
+Base de datos usada postgress
+
+Nombre de la Base de datos :propiedades
+Se entra a la base de datos con el comando pgcli
+\c para conectar 
+\l listar base de datos
+\dt listar tablas
+\q salir de la consola de postgres  
 
 Descripción del proyecto:
 Crear una aplicación web, para una inmobiliaria, que tiene como objetivo el de poder agendar
